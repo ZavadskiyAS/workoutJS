@@ -44,3 +44,6 @@ movieDB.movies.forEach((film, i) => {
     </li>`;
 });
 
+
+const form = document.querySelector('.add');
+
