@@ -32,18 +32,22 @@ const adv = document.querySelectorAll(".promo__adv img"),
 adv.forEach(item => {
     item.remove();
 });
-genre.innerHTML = "драма";
-promoBg.style = `background: url('../img/bg.jpg');`;
-numberLi.innerHTML = "";
-movieDB.movies.sort();
 
-movieDB.movies.forEach((film, i) => {
-    numberLi.innerHTML += ` 
-    <li class="promo__interactive-item">${i+1} ${film}
-        <div class="delete"></div>
-    </li>`;
-});
+// genre.innerHTML = "драма";
+
+// promoBg.style = `background: url('../img/bg.jpg');`;
+
+// numberLi.innerHTML = "";
+
+// movieDB.movies.sort();
+
+// movieDB.movies.forEach((film, i) => {
+//     numberLi.innerHTML += ` 
+//     <li class="promo__interactive-item">${i+1} ${film}
+//         <div class="delete"></div>
+//     </li>`;
+// });
 
 
-const form = document.querySelector('.add');
+// const form = document.querySelector('.add');
 
