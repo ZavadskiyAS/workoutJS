@@ -12,42 +12,39 @@
 
 5) Добавить нумерацию выведенных фильмов */
 
-'use strict';
-
-const movieDB = {
+"use strict";
+window.addEventListener("DOMContentLoaded", () => {
+  const movieDB = {
     movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
+      "Логан",
+      "Лига справедливости",
+      "Ла-ла лэнд",
+      "Одержимость",
+      "Скотт Пилигрим против...",
+    ],
+  };
 
-const adv = document.querySelectorAll(".promo__adv img"),
-      genre = document.querySelector(".promo__genre"),
-      promoBg = document.querySelector(".promo__bg"),
-      numberLi = document.querySelector(".promo__interactive-list");
+  const adv = document.querySelectorAll(".promo__adv img"),
+    genre = document.querySelector(".promo__genre"),
+    promoBg = document.querySelector(".promo__bg"),
+    numberLi = document.querySelector(".promo__interactive-list");
 
-adv.forEach(item => {
+  adv.forEach((item) => {
     item.remove();
+  });
+
+  genre.innerHTML = "драма";
+
+  promoBg.style = `background: url('../img/bg.jpg');`;
+
+  numberLi.innerHTML = "";
+
+  movieDB.movies.sort();
+
+  movieDB.movies.forEach((film, i) => {
+    numberLi.innerHTML += ` 
+    <li class="promo__interactive-item">${i + 1} ${film}
+        <div class="delete"></div>
+    </li>`;
+  });
 });
-
-// genre.innerHTML = "драма";
-
-// promoBg.style = `background: url('../img/bg.jpg');`;
-
-// numberLi.innerHTML = "";
-
-// movieDB.movies.sort();
-
-// movieDB.movies.forEach((film, i) => {
-//     numberLi.innerHTML += ` 
-//     <li class="promo__interactive-item">${i+1} ${film}
-//         <div class="delete"></div>
-//     </li>`;
-// });
-
-
-// const form = document.querySelector('.add');
-
