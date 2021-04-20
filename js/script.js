@@ -80,7 +80,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const adv = document.querySelectorAll(".promo__adv img"),
     genre = document.querySelector(".promo__genre"),
     promoBg = document.querySelector(".promo__bg"),
-    numberLi = document.querySelector(".promo__interactive-list");
+    numberLi = document.querySelector(".promo__interactive-list"),
+    addForm = document.querySelector("from.add"),
+    addInput = addForm.querySelector(".adding__input"),
+    checkbox = addForm.querySelector('[type="checkbox"]');
 
   adv.forEach((item) => {
     item.remove();
