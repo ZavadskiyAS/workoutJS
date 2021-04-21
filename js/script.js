@@ -85,22 +85,38 @@ window.addEventListener("DOMContentLoaded", () => {
     addInput = addForm.querySelector(".adding__input"),
     checkbox = addForm.querySelector('[type="checkbox"]');
 
+  addForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const newFilm = addInput.value;
+    const favorite = checkbox.checked;
+
+    movieDB.movies.push(newFilm);
+    movieDB.movies.sort();
+
+  })
+
   adv.forEach((item) => {
     item.remove();
   });
+  movieDB.movies.sort();
 
   genre.innerHTML = "драма";
 
   promoBg.style = `background: url('../img/bg.jpg');`;
 
-  numberLi.innerHTML = "";
+  
+  function createMovieList(films, parent) {
+    parent.innerHTML = "";
+    
+    films.forEach((film, i) => {
+      parent.innerHTML += ` 
+      <li class="promo__interactive-item">${i + 1} ${film}
+          <div class="delete"></div>
+      </li>`;
+    });
+  }
 
-  movieDB.movies.sort();
+  createMovieList(movieDB.movies, numberLi);
 
-  movieDB.movies.forEach((film, i) => {
-    numberLi.innerHTML += ` 
-    <li class="promo__interactive-item">${i + 1} ${film}
-        <div class="delete"></div>
-    </li>`;
-  });
 });
