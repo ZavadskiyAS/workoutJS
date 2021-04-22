@@ -96,16 +96,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
   })
 
-  adv.forEach((item) => {
-    item.remove();
-  });
+  const delateadv = (arr) => {
+    arr.forEach((item) => {
+      item.remove();
+    });
+  }
+
+  delateadv(adv);
   movieDB.movies.sort();
 
-  genre.innerHTML = "драма";
-
-  promoBg.style = `background: url('../img/bg.jpg');`;
-
   
+  const makeChanges = () => {
+    
+    genre.innerHTML = "драма";
+  
+    promoBg.style = `background: url('../img/bg.jpg');`;
+
+  }
+
+  makeChanges();
+
   function createMovieList(films, parent) {
     parent.innerHTML = "";
     
